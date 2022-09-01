@@ -1,56 +1,56 @@
-# Por que você precisa do GraphQL?
+# Por que vocÃª precisa do GraphQL?
 
-Menos viagens de ida e volta ao servidor – O GraphQL requer menos viagens de ida e volta, ou seja, menos chamadas de ida e volta para o servidor para obter todos os dados de que você precisa.
+Menos viagens de ida e volta ao servidor â€“ O GraphQL requer menos viagens de ida e volta, ou seja, menos chamadas de ida e volta para o servidor para obter todos os dados de que vocÃª precisa.
 
-Sem over-fetching ou under-fetching – Ao contrário do REST, você nunca terá poucos ou muitos dados ao usar o GraphQL, pois pode especificar todas as informações necessárias da API antecipadamente.
+Sem over-fetching ou under-fetching â€“ Ao contrÃ¡rio do REST, vocÃª nunca terÃ¡ poucos ou muitos dados ao usar o GraphQL, pois pode especificar todas as informaÃ§Ãµes necessÃ¡rias da API antecipadamente.
 
-Sem problemas de versionamento – O GraphQL não precisa de versionamento e, se você não remover os campos dos tipos, os clientes ou consumidores da API não serão interrompidos.
+Sem problemas de versionamento â€“ O GraphQL nÃ£o precisa de versionamento e, se vocÃª nÃ£o remover os campos dos tipos, os clientes ou consumidores da API nÃ£o serÃ£o interrompidos.
 
-Largura de banda reduzida – o GraphQL geralmente requer menos solicitações e menos largura de banda. Você pode obter todos os dados necessários usando uma única chamada de API para o endpoint da API. Como você pode especificar os dados necessários, em vez de recuperar todos os campos de um tipo, você pode recuperar apenas os necessários, reduzindo assim a largura de banda e o uso de recursos.
+Largura de banda reduzida â€“ o GraphQL geralmente requer menos solicitaÃ§Ãµes e menos largura de banda. VocÃª pode obter todos os dados necessÃ¡rios usando uma Ãºnica chamada de API para o endpoint da API. Como vocÃª pode especificar os dados necessÃ¡rios, em vez de recuperar todos os campos de um tipo, vocÃª pode recuperar apenas os necessÃ¡rios, reduzindo assim a largura de banda e o uso de recursos.
 
-Documentação – O GraphQL é adepto da criação de documentação de endpoints GraphQL, assim como o Swagger faz para endpoints REST.
+DocumentaÃ§Ã£o â€“ O GraphQL Ã© adepto da criaÃ§Ã£o de documentaÃ§Ã£o de endpoints GraphQL, assim como o Swagger faz para endpoints REST.
 
-Apesar de todas as vantagens que o GraphQL tem a oferecer, também existem algumas desvantagens. O GraphQL é complexo e é difícil implementar o cache ou a limitação de taxa no GraphQL do que no REST.
+Apesar de todas as vantagens que o GraphQL tem a oferecer, tambÃ©m existem algumas desvantagens. O GraphQL Ã© complexo e Ã© difÃ­cil implementar o cache ou a limitaÃ§Ã£o de taxa no GraphQL do que no REST.
 
 # Como funciona uma consulta GraphQL?
 
-Cada consulta do GraphQL passa por três fases: análise, validação e execução. Na fase de análise, a consulta do GraphQL é tokenizada e analisada em uma representação conhecida como árvore de sintaxe abstrata. Na fase de validação, a consulta gráfica é validada em relação ao esquema.
+Cada consulta do GraphQL passa por trÃªs fases: anÃ¡lise, validaÃ§Ã£o e execuÃ§Ã£o. Na fase de anÃ¡lise, a consulta do GraphQL Ã© tokenizada e analisada em uma representaÃ§Ã£o conhecida como Ã¡rvore de sintaxe abstrata. Na fase de validaÃ§Ã£o, a consulta grÃ¡fica Ã© validada em relaÃ§Ã£o ao esquema.
 
-![Graphql Execution Engine](./documents/graphql-execution-engine.png =600x)
+![alt text](https://github.com/GabrielSantosLemos/graphql-web-api/blob/develop/documents/graphql-execution-engine.png?raw=true)
 
-Por fim, na fase de execução, o runtime do GraphQL percorre a árvore de sintaxe abstrata da raiz da árvore, recupera e agrega os resultados e envia os dados de volta ao cliente GraphQL como JSON.
+Por fim, na fase de execuÃ§Ã£o, o runtime do GraphQL percorre a Ã¡rvore de sintaxe abstrata da raiz da Ã¡rvore, recupera e agrega os resultados e envia os dados de volta ao cliente GraphQL como JSON.
 
 # GraphQL vs. REST
 
-Dê uma olhada rápida nas diferenças entre GraphQL e REST:
+DÃª uma olhada rÃ¡pida nas diferenÃ§as entre GraphQL e REST:
 
- - Ao contrário do REST, que pode precisar de várias chamadas de API para obter os dados desejados, o GraphQL expõe apenas um endpoint que você pode usar para obter as informações necessárias.
- - REST só funciona com HTTP, enquanto o GraphQL não precisa de HTTP.
- - Ao contrário do REST, que permite usar qualquer verbo HTTP, o GraphQL permite que você use apenas o verbo HTTP POST.
- - No REST, a API especifica a solicitação e a resposta. Pelo contrário, no GraphQL, a API define os recursos acessíveis, e os clientes ou consumidores podem solicitar exatamente os dados que precisam da API.
- - Ao trabalhar com REST, o servidor determina o tamanho do recurso. Pelo contrário, com o GraphQL, a API especifica os recursos acessíveis e o cliente solicita exatamente o que precisa.
- - REST e GraphQL são plataforma e linguagem neutra, e ambos podem retornar dados JSON.
+ - Ao contrÃ¡rio do REST, que pode precisar de vÃ¡rias chamadas de API para obter os dados desejados, o GraphQL expÃµe apenas um endpoint que vocÃª pode usar para obter as informaÃ§Ãµes necessÃ¡rias.
+ - REST sÃ³ funciona com HTTP, enquanto o GraphQL nÃ£o precisa de HTTP.
+ - Ao contrÃ¡rio do REST, que permite usar qualquer verbo HTTP, o GraphQL permite que vocÃª use apenas o verbo HTTP POST.
+ - No REST, a API especifica a solicitaÃ§Ã£o e a resposta. Pelo contrÃ¡rio, no GraphQL, a API define os recursos acessÃ­veis, e os clientes ou consumidores podem solicitar exatamente os dados que precisam da API.
+ - Ao trabalhar com REST, o servidor determina o tamanho do recurso. Pelo contrÃ¡rio, com o GraphQL, a API especifica os recursos acessÃ­veis e o cliente solicita exatamente o que precisa.
+ - REST e GraphQL sÃ£o plataforma e linguagem neutra, e ambos podem retornar dados JSON.
 
 # Objetivos do GraphQL: qual problema ele resolve?
 
-Existem várias desvantagens do REST:
+Existem vÃ¡rias desvantagens do REST:
 
- - Busca excessiva – isso implica que sua API REST envia mais dados do que você precisa
- - Busca insuficiente – isso implica que sua API REST envia menos dados do que você precisa
- - Várias solicitações – exigindo várias solicitações para obter os dados de que você precisa
- - Várias viagens de ida e volta – várias solicitações necessárias para concluir uma execução antes que você possa prosseguir
+ - Busca excessiva â€“ isso implica que sua API REST envia mais dados do que vocÃª precisa
+ - Busca insuficiente â€“ isso implica que sua API REST envia menos dados do que vocÃª precisa
+ - VÃ¡rias solicitaÃ§Ãµes â€“ exigindo vÃ¡rias solicitaÃ§Ãµes para obter os dados de que vocÃª precisa
+ - VÃ¡rias viagens de ida e volta â€“ vÃ¡rias solicitaÃ§Ãµes necessÃ¡rias para concluir uma execuÃ§Ã£o antes que vocÃª possa prosseguir
 
-A busca excessiva e a busca insuficiente são dois dos problemas comuns que você encontraria com frequência ao trabalhar com APIs REST. Isso é explicado com mais detalhes na próxima seção.
+A busca excessiva e a busca insuficiente sÃ£o dois dos problemas comuns que vocÃª encontraria com frequÃªncia ao trabalhar com APIs REST. Isso Ã© explicado com mais detalhes na prÃ³xima seÃ§Ã£o.
 
-# Explicação do problema da sub-busca e da sobre-busca
+# ExplicaÃ§Ã£o do problema da sub-busca e da sobre-busca
 
-Aqui está um exemplo típico de endpoints REST para um aplicativo típico que gerencia postagens de blog.
+Aqui estÃ¡ um exemplo tÃ­pico de endpoints REST para um aplicativo tÃ­pico que gerencia postagens de blog.
 
 - GET /blogposts
 - GET /blogposts/{blogPostId}
 - GET /authors
 - GET /authors/{authorId}
 
-Para agregar os dados, você terá que fazer várias chamadas para os endpoints mostrados aqui. Observe que uma solicitação para o ponto de extremidade /blogposts buscaria a lista de postagens do blog junto com authorId, mas não retornaria dados do autor. Você precisa fazer uma chamada para /authors/{authorId} várias vezes para obter detalhes do autor dos autores. Esse problema é conhecido como busca insuficiente, pois a carga útil da API contém menos dados do que você precisa. Você pode aproveitar o Backend for Frontend ou o padrão Gateway Aggregation para resolver esse problema. Ainda assim, em ambos os casos, você precisará de várias chamadas para os endpoints da API.
+Para agregar os dados, vocÃª terÃ¡ que fazer vÃ¡rias chamadas para os endpoints mostrados aqui. Observe que uma solicitaÃ§Ã£o para o ponto de extremidade /blogposts buscaria a lista de postagens do blog junto com authorId, mas nÃ£o retornaria dados do autor. VocÃª precisa fazer uma chamada para /authors/{authorId} vÃ¡rias vezes para obter detalhes do autor dos autores. Esse problema Ã© conhecido como busca insuficiente, pois a carga Ãºtil da API contÃ©m menos dados do que vocÃª precisa. VocÃª pode aproveitar o Backend for Frontend ou o padrÃ£o Gateway Aggregation para resolver esse problema. Ainda assim, em ambos os casos, vocÃª precisarÃ¡ de vÃ¡rias chamadas para os endpoints da API.
 
-Pelo contrário, sua carga útil da API também pode ser muito detalhada. Por exemplo, você pode querer saber apenas os detalhes das postagens do blog chamando o ponto de extremidade /blogposts, mas sua carga também conterá authorId. Esse problema é conhecido como over-fetching, o que implica que a carga útil da API contém mais dados do que você precisa, consumindo mais largura de banda da rede. É aqui que o GraphQL vem em socorro.
+Pelo contrÃ¡rio, sua carga Ãºtil da API tambÃ©m pode ser muito detalhada. Por exemplo, vocÃª pode querer saber apenas os detalhes das postagens do blog chamando o ponto de extremidade /blogposts, mas sua carga tambÃ©m conterÃ¡ authorId. Esse problema Ã© conhecido como over-fetching, o que implica que a carga Ãºtil da API contÃ©m mais dados do que vocÃª precisa, consumindo mais largura de banda da rede. Ã‰ aqui que o GraphQL vem em socorro.
