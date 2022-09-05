@@ -1,14 +1,8 @@
-using GraphQL.WebAPI.Infraestrutura.GraphQL;
+using GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes;
 using GraphQL.WebAPI.Infraestrutura.Repository;
-using HotChocolate.AspNetCore;
-using HotChocolate.AspNetCore.Playground;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContextFactory<Context>(options => options.UseInMemoryDatabase("Database"));
 builder.Services.AddInMemorySubscriptions();
@@ -16,36 +10,11 @@ builder.Services.AddInMemorySubscriptions();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
 builder.Services.AddGraphQLServer()
-                .AddType<AuthorType>()
-                .AddQueryType<AuthorQuery>()
-                .AddMutationType<AuthorMutation>()
-                .AddSubscriptionType<AuthorSubscription>();
+                .AddType<ClienteType>()
+                .AddQueryType<ClienteQuery>();
 
-var app = builder.Build();
+WebApplication? app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    app.UsePlayground(new PlaygroundOptions
-    {
-        QueryPath = "/graphql",
-        Path = "/playground"
-    });
-}
-
-app.UseWebSockets();
-
-app.UseRouting()
-   .UseEndpoints(endpoints =>
-   {
-       endpoints.MapGraphQL();
-   });
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.MapGraphQL();
 
 app.Run();
