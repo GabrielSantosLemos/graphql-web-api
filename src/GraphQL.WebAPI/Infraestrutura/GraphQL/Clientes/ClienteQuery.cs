@@ -1,34 +1,34 @@
-﻿using GraphQL.WebAPI.Dominio;
+﻿using HotChocolate.Resolvers;
 
 namespace GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes
 {
     public class ClienteQuery
     {
-        private readonly List<Cliente> _clientes = new () 
+        private readonly List<ClienteViewModel> _clientes = new () 
         {
-            new Cliente
+            new ClienteViewModel
             {
                 Id = 1,
                 Nome = "Marcio Silva"
             },
-            new Cliente
+            new ClienteViewModel
             {
                 Id = 2,
                 Nome = "Bruna Rosa"
             },
-            new Cliente
+            new ClienteViewModel
             {
                 Id = 2,
                 Nome = "Lucas Silva"
             },
         };
 
-        public List<Cliente> BuscarTodosClientes()
+        public List<ClienteViewModel> BuscarTodosClientes(IResolverContext context)
         {
             return _clientes;
         }
 
-        public Cliente? BuscarClientePorId(int id)
+        public ClienteViewModel? BuscarClientePorId(int id)
         {
             return _clientes.Where(x => x.Id == id).FirstOrDefault();
         }

@@ -9,53 +9,32 @@ namespace GraphQL.WebAPI.Infraestrutura.Repository
         {
         }
 
-        public DbSet<Author> Authors { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Author>().HasData(
-                new Author
+            modelBuilder.Entity<Cliente>().HasData(
+                new Cliente
                 {
                     Id = 1,
-                    FirstName = "Joydip",
-                    LastName = "Kanjilal"
+                    Nome = "Marcio"
                 },
-                new Author
+                new Cliente
                 {
                     Id = 2,
-                    FirstName = "Steve",
-                    LastName = "Smith"
+                    Nome = "Maria"
                 },
-                new Author
+                new Cliente
                 {
                     Id = 3,
-                    FirstName = "Anand",
-                    LastName = "Narayanaswamy"
+                    Nome = "Bruno"
+                },
+                new Cliente
+                {
+                    Id = 4,
+                    Nome = "Icaro"
                 }
             );
-
-            //modelBuilder.Entity<Cliente>().HasData(
-            //    new Cliente
-            //    {
-            //        Id = 1,
-            //        Nome = "Marcio"
-            //    },
-            //    new Cliente
-            //    {
-            //        Id = 1,
-            //        Nome = "Maria"
-            //    },
-            //    new Cliente
-            //    {
-            //        Id = 1,
-            //        Nome = "Bruno"
-            //    },
-            //    new Cliente
-            //    {
-            //        Id = 1,
-            //        Nome = "Icaro"
-            //    }
-            //);
         }
     }
 }

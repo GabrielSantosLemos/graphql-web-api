@@ -7,10 +7,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContextFactory<Context>(options => options.UseInMemoryDatabase("Database"));
 builder.Services.AddInMemorySubscriptions();
 
-builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
-
 builder.Services.AddGraphQLServer()
-                .AddType<ClienteType>()
                 .AddQueryType<ClienteQuery>();
 
 WebApplication? app = builder.Build();
