@@ -28,7 +28,7 @@ namespace GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes
             return _clientes;
         }
 
-        public ClienteViewModel? BuscarClientePorId(int id)
+        public ClienteViewModel? BuscarClientePorId(IResolverContext context, int id)
         {
             return _clientes.Where(x => x.Id == id).FirstOrDefault();
         }
