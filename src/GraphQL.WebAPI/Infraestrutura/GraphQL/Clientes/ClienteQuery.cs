@@ -32,5 +32,17 @@ namespace GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes
         {
             return _clientes.Where(x => x.Id == id).FirstOrDefault();
         }
+
+        [UsePaging]
+        public IEnumerable<ClienteViewModel> Paging(IResolverContext context)
+        {
+            return _clientes;
+        }
+
+        [UseOffsetPaging]
+        public IEnumerable<ClienteViewModel> Offset(IResolverContext context)
+        {
+            return _clientes;
+        }
     }
 }
