@@ -30,6 +30,13 @@ namespace GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes
 
         public ClienteViewModel? BuscarClientePorId(IResolverContext context, int id)
         {
+            //Per the Annotation based Resolver signature here HC will inject the 'id' argument for us!
+            //Otherwise this is just normal Resolver stuff...
+            var productId = id;
+
+            //Also you could get the argument from the IResolverContext...
+            //var productId = context.Argument<int>("id");. . . 
+
             return _clientes.Where(x => x.Id == id).FirstOrDefault();
         }
 
