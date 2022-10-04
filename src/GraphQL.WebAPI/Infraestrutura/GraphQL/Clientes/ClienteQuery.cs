@@ -1,4 +1,5 @@
-﻿using HotChocolate.Resolvers;
+﻿using HotChocolate.Data;
+using HotChocolate.Resolvers;
 
 namespace GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes
 {
@@ -37,19 +38,21 @@ namespace GraphQL.WebAPI.Infraestrutura.GraphQL.Clientes
             //Also you could get the argument from the IResolverContext...
             //var productId = context.Argument<int>("id");. . . 
 
+
             return _clientes.Where(x => x.Id == id).FirstOrDefault();
         }
 
         [UsePaging]
-        public IEnumerable<ClienteViewModel> Paging(IResolverContext context)
+        public IEnumerable<ClienteViewModel> BuscarClientesPaging(IResolverContext context)
         {
             return _clientes;
         }
 
         [UseOffsetPaging]
-        public IEnumerable<ClienteViewModel> Offset(IResolverContext context)
+        public IEnumerable<ClienteViewModel> BuscarClientesOffset(IResolverContext context)
         {
             return _clientes;
         }
+
     }
 }
